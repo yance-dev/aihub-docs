@@ -1,12 +1,12 @@
-# 目录结构
+## 目录结构
 
 ```bash
 voc
- ├── images                                         # 图像文件夹
+ ├── images                                         ## 图像文件夹
  │   ├── <image_name1>.jpg
  │   ├── <image_name2>.jpg
  │   └── <image_nameN>.jpg
- └── annotations                                    # 标注文件夹
+ └── annotations                                    ## 标注文件夹
  │   ├── <image_name1>.xml
  │   ├── <image_name2>.xml
  │   └── <image_nameN>.xml
@@ -14,7 +14,7 @@ voc
 
 
 
-# xml格式
+## xml格式
 
 基于voc补充的自定义字段如下：
 
@@ -38,33 +38,33 @@ voc
 
 ```xml
 <annotation>
-  <folder>VOC2012</folder>                          # 图像所在文件夹
-  <filename>2007_000032.jpg</filename>              # 图像文件名
-  <size>                                            # 图像尺寸信息
-    <width>500</width>                              # 图像宽度
-    <height>281</height>                            # 图像高度
-    <depth>3</depth>                                # 图像深度，也就是通道数
+  <folder>VOC2012</folder>                          ## 图像所在文件夹
+  <filename>2007_000032.jpg</filename>              ## 图像文件名
+  <size>                                            ## 图像尺寸信息
+    <width>500</width>                              ## 图像宽度
+    <height>281</height>                            ## 图像高度
+    <depth>3</depth>                                ## 图像深度，也就是通道数
   </size>
  
   <object>                                          
-    <name>aeroplane</name>                          # 类别名
-    <pose>Frontal</pose>                            # 拍摄角度，Unspecified
-    <truncated>0</truncated>                        # 是否被截断，0表示完整未截断
-    <difficult>0</difficult>                        # 是否难以识别，0表示不难识别
-    <bndbox>                                        # 目标框信息
-      <xmin>104</xmin>                              # 左上角x
-      <ymin>78</ymin>                               # 左上角y
-      <xmax>375</xmax>                              # 右下角x
-      <ymax>183</ymax>                              # 右下角y
+    <name>aeroplane</name>                          ## 类别名
+    <pose>Frontal</pose>                            ## 拍摄角度，Unspecified
+    <truncated>0</truncated>                        ## 是否被截断，0表示完整未截断
+    <difficult>0</difficult>                        ## 是否难以识别，0表示不难识别
+    <bndbox>                                        ## 目标框信息
+      <xmin>104</xmin>                              ## 左上角x
+      <ymin>78</ymin>                               ## 左上角y
+      <xmax>375</xmax>                              ## 右下角x
+      <ymax>183</ymax>                              ## 右下角y
     </bndbox>
-    <meta>                                          # 自定义元信息
+    <meta>                                          ## 自定义元信息
         <UID>1b9c84e3-8798-47d8-9309-47c159d1fcca</UID>             
-        <annotator>3</annotator>                    # 标注员信息
-        <result_type>ground_truth</result_type>     # 结果类型。ground_truth为实际结果，consensus_test为一致性测试结果
+        <annotator>3</annotator>                    ## 标注员信息
+        <result_type>ground_truth</result_type>     ## 结果类型。ground_truth为实际结果，consensus_test为一致性测试结果
     </meta>
   </object>
   
-  <object>                                          # 下面是其他标注信息，这里略掉
+  <object>                                          ## 下面是其他标注信息，这里略掉
     ...
   </object>
 </annotation>
@@ -72,13 +72,13 @@ voc
 
 
 
-## object内容
+### object内容
 
-### 目标框
+#### 目标框
 
 ```xml
 <object>                                          
-    <name>aeroplane</name>                          # 目标的类别名
+    <name>aeroplane</name>                          ## 目标的类别名
     <pose>Frontal</pose>                            
     <truncated>0</truncated>                        
     <difficult>0</difficult>                        
@@ -92,14 +92,14 @@ voc
         <UID>1b9c84e3-8798-47d8-9309-47c159d1fcca</UID>             
         <annotator>3</annotator>                    
         <result_type>ground_truth</result_type>    
-        <rotate_angle>0.36520144</rotate_angle>     # 目标框的旋转角度，顺时针为正，单位为度
+        <rotate_angle>0.36520144</rotate_angle>     ## 目标框的旋转角度，顺时针为正，单位为度
     </meta>
   </object>
 ```
 
 
 
-### 关系
+#### 关系
 
 关系用于标注两个目标的关系，因此下例中包含了两个目标框用于说明
 
@@ -165,7 +165,7 @@ voc
 
 
 
-### 点
+#### 点
 
 ```xml
 <object>                                          
@@ -184,7 +184,7 @@ voc
       <annotator>3</annotator>
       <result_type>ground_truth</result_type>
       <prompt>person</prompt>
-      <point>                                       # 点数据
+      <point>                                       ## 点数据
         <X>60</X>
         <Y>51.5</Y>
       </point>
@@ -194,7 +194,7 @@ voc
 
 
 
-### 线
+#### 线
 
 ```xml
 <object>                                           
@@ -212,7 +212,7 @@ voc
       <UID>ec3c815e-cad0-4a07-8b01-4c48d78320e0</UID>
       <annotator>3</annotator>
       <result_type>ground_truth</result_type>
-      <line>                                         # 线数据
+      <line>                                         ## 线数据
         <X>54</X>
         <Y>21.5</Y>
       </line>
@@ -230,7 +230,7 @@ voc
 
 
 
-### 分类标签
+#### 分类标签
 
 对于多标签的项目，一个标签使用一个object表示
 
