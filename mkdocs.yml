@@ -1,5 +1,5 @@
 site_name: AiHub 使用手册
-site_url: https://mydomain.org/mysite
+site_url: https://lixajh.github.io/aihub-docs
 theme:
   name: material
   language: zh
@@ -37,6 +37,8 @@ nav:
           - 数据标注: 
               - 目标检测: 目标检测.md
               - 图像分类: 图像分类.md
+              - 视频分类: 视频分类.md
+              - 视频标注: 视频标注.md
               - 档案清洗合并: 档案清洗合并.md
               - 快捷键说明: 快捷键说明.md
           - 数据导出: 数据导出.md
