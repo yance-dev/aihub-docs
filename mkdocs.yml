@@ -3,11 +3,15 @@ site_url: https://mydomain.org/mysite
 theme:
   name: material
   language: zh
+  features:
+    - content.images.zoom
+markdown_extensions:
+  - attr_list
 nav:
   - 产品简介: 产品简介.md  
-  - 快速入门: 
-      - 标注人员操作指南：标注人员操作指南.md
-      - 算法人员操作指南：算法人员操作指南.md
+  - 快速入门:
+      - 标注人员操作指南: 标注人员操作指南.md
+      - 算法人员操作指南: 算法人员操作指南.md
   - 操作指南:
       - Dashboard: Dashboard.md
       - 任务中心: 
