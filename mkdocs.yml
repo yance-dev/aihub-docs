@@ -10,8 +10,35 @@ markdown_extensions:
 use_directory_urls: false
 plugins:
   - glightbox
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
 nav:
-  - 产品简介: 产品简介.md  
+  - 产品简介: index.md  
   - 快速入门:
       - 标注人员操作指南: 标注人员操作指南.md
       - 算法人员操作指南: 算法人员操作指南.md
