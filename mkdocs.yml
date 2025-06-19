@@ -8,8 +8,8 @@ theme:
 markdown_extensions:
   - attr_list
 use_directory_urls: false
-# plugins:
-#   - glightbox
+plugins:
+  - glightbox
 nav:
   - 产品简介: 产品简介.md  
   - 快速入门:
