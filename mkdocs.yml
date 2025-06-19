@@ -3,6 +3,9 @@ site_url: https://mydomain.org/mysite
 theme:
   name: material
   language: zh
+plugins:
+  - glightbox
+
 nav:
   - 产品简介: 产品简介.md  
   - 快速入门: 
