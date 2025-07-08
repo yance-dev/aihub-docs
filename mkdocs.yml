@@ -15,6 +15,7 @@ markdown_extensions:
 use_directory_urls: false
 plugins:
   - glightbox
+  - offline
 markdown_extensions:
   - admonition
   - attr_list
