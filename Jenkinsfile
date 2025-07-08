@@ -9,7 +9,7 @@ pipeline {
 
     }
     environment {
-        GIT_URL = 'http://192.168.70.8/aisdp/data_service/one_platform_backend.git'
+        GIT_URL = 'https://github.com/lixajh/aihub-docs.git'
         GIT_CREDENTIALS_ID = 'lx-github'  // 这里指定你的凭据 ID
         DOCKER_CREDENTIALS_ID = '14.129docker'
         DOCKER_REGISTRY = '192.168.14.129:80'
