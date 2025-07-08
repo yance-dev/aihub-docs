@@ -15,6 +15,7 @@ COPY . /app/
 # mkdocs-material
 # mkdocs-glightbox
 COPY requirements.txt .
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 如果没有 requirements.txt，可以直接安装：
