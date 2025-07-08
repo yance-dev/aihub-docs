@@ -2,6 +2,11 @@ site_name: AiHub 使用手册
 site_url: https://lixajh.github.io/aihub-docs
 theme:
   name: material
+  font:
+    # 设置字体为 none，表示不从 Google Fonts 加载
+    # 主题会尝试使用系统字体或其内置的 fallback 字体
+    text: none
+    code: none
   language: zh
   features:
     - content.images.zoom
