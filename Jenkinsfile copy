@@ -1,0 +1,61 @@
+import java.text.SimpleDateFormat
+def dateFormat = new SimpleDateFormat("yyyyMMddHHmm")
+def dockerTag = '1.0'
+pipeline {
+    agent any
+    environment {
+        dockerName='192.168.14.41:18080/library/aihub_docs'
+        conatinerName="aihub_docks_${dockerTag}"
+        nginxImage='nginx:stable-alpine'
+        DOCKER_USERNAME="admin"
+        DOCKER_PASSWORD='4vDjz89CCMMq2z'
+    }
+    stages {
+        stage('Docker build') {
+            steps {
+                sh 'pwd'
+                sh 'ls'
+                sh "docker build -t  ${dockerName}:${dockerTag} ."
+            }
+        }
+        stage('Image Push') {
+            steps {
+                sh "echo ${DOCKER_PASSWORD}| docker login 192.168.14.41:18080  -u=${DOCKER_USERNAME} --password-stdin"
+                sh "docker push ${dockerName}:${dockerTag}"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sshPublisher(
+                    publishers: [
+                        sshPublisherDesc(
+                            configName: '13.160-intellif', 
+                            transfers: [
+                                sshTransfer(
+                                    // execCommand: 'cd /home/intellif/deploy/dw && kubectl delete -f dwh-k8s.yaml && kubectl apply -f dwh-k8s.yaml' 
+                                    execCommand: 'cd /home/intellif/deploy/dw && bash deploy.sh'
+                                )
+                            ]
+                        )
+                    ]
+                )
+            }
+        }
+    }
+
+    post{
+        success{
+            echo "========pipeline executed successfully ========"
+            sh """
+            curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Datahub镜像 Pushed $dockerName:$dockerTag"}}' https://open.feishu.cn/open-apis/bot/v2/hook/87319123-33a9-48d5-9104-fc6bc0a7b0d7
+            """
+        }
+        failure{
+            echo "========pipeline execution failed========"
+            sh """
+            curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"Datahub镜像构建失败"}}' https://open.feishu.cn/open-apis/bot/v2/hook/87319123-33a9-48d5-9104-fc6bc0a7b0d7
+            """
+            
+        }
+    }
+}
