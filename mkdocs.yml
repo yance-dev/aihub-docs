@@ -96,4 +96,4 @@ nav:
           - 性能评测: 性能评测.md
   - 开发参考:
       - API文档: API文档.md
-      - SDK文档: /aihub_sdk/index.html
+      - SDK文档: /aihub_sdk_docs/
