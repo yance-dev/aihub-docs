@@ -21,8 +21,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 如果没有 requirements.txt，可以直接安装：
 # RUN pip install --no-cache-dir mkdocs-material mkdocs-glightbox
 
-# 编译 MkDocs 项目，生成静态文件到 site/ 目录
-RUN mkdocs build
+# 编译所有包含 mkdocs.yml 的一级目录
+RUN find /app -maxdepth 1 -type d -exec sh -c 'for dir do [ -f "$dir/mkdocs.yml" ] && (cd "$dir" && mkdocs build); done' sh {} +
 
 # --- Nginx Serve Stage ---
 # 使用轻量级的 Nginx 镜像作为最终的运行时环境
@@ -35,7 +35,9 @@ RUN rm -rf /usr/share/nginx/html/*
 # COPY ./nginx_conf/default.conf /etc/nginx/conf.d/default.conf
 
 # 将构建阶段生成的静态文件从 /app/site 复制到 Nginx 的默认 HTML 目录
-COPY --from=build-stage /app/site /usr/share/nginx/html
+# 复制所有编译好的文档到 Nginx 目录
+RUN --mount=from=build-stage,src=/app,target=/app \
+    find /app -maxdepth 1 -type d -exec sh -c 'for dir do [ -f "$dir/mkdocs.yml" ] && cp -r "$dir/site" "/usr/share/nginx/html/$(basename "$dir")"; done' sh {} +
 
 # 暴露 80 端口，这是 Nginx 默认监听的端口
 EXPOSE 80
