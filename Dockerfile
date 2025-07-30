@@ -34,8 +34,8 @@ FROM nginx:stable-alpine
 # 移除 Nginx 默认的欢迎页，避免冲突
 RUN rm -rf /usr/share/nginx/html/*
 
-# (可选) 如果你有自定义的 Nginx 配置，请取消注释并复制
-# COPY ./nginx_conf/default.conf /etc/nginx/conf.d/default.conf
+# 复制自定义 Nginx 配置以支持子目录访问
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 # 将构建阶段生成的静态文件从 /app/site 复制到 Nginx 的默认 HTML 目录
 # 复制所有编译好的文档到 Nginx 目录
