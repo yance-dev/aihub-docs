@@ -1,0 +1,48 @@
+site_name: 客户案例
+site_url: https://lixajh.github.io/demo-label-train
+theme:
+  name: material
+  font:
+    # 设置字体为 none，表示不从 Google Fonts 加载
+    # 主题会尝试使用系统字体或其内置的 fallback 字体
+    text: false
+    code: false
+  language: zh
+  features:
+    - content.images.zoom
+markdown_extensions:
+  - attr_list
+use_directory_urls: false
+plugins:
+  - glightbox
+  - offline
+  - privacy
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - 标注完成触发训练任务: index.md  

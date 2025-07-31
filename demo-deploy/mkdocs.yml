@@ -1,5 +1,5 @@
 site_name: 客户案例
-site_url: https://lixajh.github.io/aihub-docs
+site_url: https://lixajh.github.io/demo-deploy
 theme:
   name: material
   font:
@@ -45,5 +45,5 @@ markdown_extensions:
       custom_checkbox: true
 
 nav:
-  - 回流数据自动清洗: index.md  
+  - 大模型多实例部署 + 负载均衡推理: index.md
   

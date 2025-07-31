@@ -58,30 +58,31 @@
 ## ✅ 示例流程图（结构描述）
 ![](images/工作流案例/image.jpg)
 
+## ✅ 详细结构
 
-1. 提取参数
+1. 输入参数
 
-   * task \ date：数据批次
+      * task \ date：数据批次
 
-   * cleaner \ processor \ num：图像清洗进程数量
+      * cleaner \ processor \ num：图像清洗进程数量
 
-   * back \ root \ path：回流数据路径
+      * back \ root \ path：回流数据路径
 
-   * infer \ global \ size：推理任务并行数量
+      * infer \ global \ size：推理任务并行数量
 
-   * code \ root \ path：推理任务代码位置
+      * code \ root \ path：推理任务代码位置
 
-   * docker \ image \ name：推理任务镜像
+      * docker \ image \ name：推理任务镜像
 
-   * sample \ rate：vlm判别错误的图像抽检比例
+      * sample \ rate：vlm判别错误的图像抽检比例
 
-   * num \ corr \ sample：vlm判别正确的图像抽检数量
+      * num \ corr \ sample：vlm判别正确的图像抽检数量
 
-   * save \ root \ path 和 nfs \ save \ root \ path：推理结果存储路径
+      * save \ root \ path 和 nfs \ save \ root \ path：推理结果存储路径
 
-   * cluster \ id：虚拟集群id
+      * cluster \ id：虚拟集群id
 
-
+2. 节点列表
 
 | 工作流节点                                   | 说明                                                                          | 输入参数                                                                                                                 | 输出参数                                    |
 | --------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
