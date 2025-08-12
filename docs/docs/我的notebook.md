@@ -12,35 +12,35 @@
 
 2. 点击浏览器右上角的控制按钮，选择设置
 
-   ![](images/我的notebook/image.png)
+     ![](images/我的notebook/image.png)
 
 3. 选择隐私与安全 - 安全 - 管理证书
 
-   ![](images/我的notebook/image-1.png)
+     ![](images/我的notebook/image-1.png)
 
-   ![](images/我的notebook/image-2.png)
+     ![](images/我的notebook/image-2.png)
 
 4. 从这里开始不同版本的chrome浏览器导入证书方式有差异，这里提供两个不同版本的导入方法，如您的浏览器与此不同，请自行搜索导入方法或升级浏览器到比较新的版本。
 
-  1. 138版本：
+      -  138版本：
 
-     1. 一次选择本地证书 - 自定义 -由您安装 - 可信证书 - 导入&#x20;
+         1. 一次选择本地证书 - 自定义 -由您安装 - 可信证书 - 导入&#x20;
 
-        ![](images/我的notebook/image-3.png)
+               ![](images/我的notebook/image-3.png)
 
-        ![](images/我的notebook/image-4.png)
+               ![](images/我的notebook/image-4.png)
 
-     2. 选择之前下载的证书导入，导入成功后可以看到新的证书显示。
+         2. 选择之前下载的证书导入，导入成功后可以看到新的证书显示。
 
-        ![](images/我的notebook/image-5.png)
+               ![](images/我的notebook/image-5.png)
 
-  2. 133版本
+      - 133版本
 
-     1. 依次选择 本地证书 - 管理从windows导入的证书 - 依次在“中间证书颁发机构”，“受信任的根证书颁发机构”,“受信任的发布者”导入前面下载的证书，导入成功后，可以在颁发者这里看到对应的证书已经导入。
+         1. 依次选择 本地证书 - 管理从windows导入的证书 - 依次在“中间证书颁发机构”，“受信任的根证书颁发机构”,“受信任的发布者”导入前面下载的证书，导入成功后，可以在颁发者这里看到对应的证书已经导入。
 
-        ![](images/我的notebook/image-6.png)
+            ![](images/我的notebook/image-6.png)
 
-        ![](images/我的notebook/image-7.png)
+            ![](images/我的notebook/image-7.png)
 
 ## 启动和关闭容器
 
