@@ -6,7 +6,7 @@
 
 ### 配置证书
 
-由于vscode server限制，必须通过https访问页面才能使用插件，AICoding能力依赖vscode插件，因此如需使用ICoding，需先在浏览器信任内网AIHub签发的证书，操作方式如下
+由于vscode server限制，必须通过https访问页面才能使用插件，AICoding能力依赖vscode插件，因此使用AICoding，需先在浏览器信任内网AIHub签发的证书，操作方式如下：
 
 1. 通过如下链接下载证书：http://storage.ifai:5080/statics-live/cert/aihub-notebook-live.crt
 
@@ -41,6 +41,9 @@
             ![](images/我的notebook/image-6.png)
 
             ![](images/我的notebook/image-7.png)
+
+
+5. **配置完成后需关闭浏览器重新启动后证书生效**
 
 ## 启动和关闭容器
 
