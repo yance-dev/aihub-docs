@@ -12,15 +12,15 @@
 
 2. 点击浏览器右上角的控制按钮，选择设置
 
-![](images/我的notebook/image.png)
+   ![](images/我的notebook/image.png)
 
-* 选择隐私与安全 - 安全 - 管理证书
+3. 选择隐私与安全 - 安全 - 管理证书
 
-![](images/我的notebook/image-1.png)
+   ![](images/我的notebook/image-1.png)
 
-![](images/我的notebook/image-2.png)
+   ![](images/我的notebook/image-2.png)
 
-* 从这里开始不同版本的chrome浏览器导入证书方式有差异，这里提供两个不同版本的导入方法，如您的浏览器与此不同，请自行搜索导入方法或升级浏览器到比较新的版本。
+4. 从这里开始不同版本的chrome浏览器导入证书方式有差异，这里提供两个不同版本的导入方法，如您的浏览器与此不同，请自行搜索导入方法或升级浏览器到比较新的版本。
 
   1. 138版本：
 
