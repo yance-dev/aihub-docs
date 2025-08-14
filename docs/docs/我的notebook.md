@@ -4,46 +4,29 @@
 
 ## 使用前准备
 
-### 配置证书
+### 配置浏览器
 
-由于vscode server限制，必须通过https访问页面才能使用插件，AICoding能力依赖vscode插件，因此使用AICoding，需先在浏览器信任内网AIHub签发的证书，操作方式如下：
+vscode server限制所有插件都必须在HTTPS加密的网站环境下运行，AICoding能力依赖vscode插件，因此第一次启动VSCode使用AICoding时，需将我们的网站地址临时设置为“视为安全来源”，操作方式如下：
 
-1. 通过如下链接下载证书：http://storage.ifai:5080/statics-live/cert/aihub-notebook-live.crt
+1. 获取VSCode服务网页地址：
 
-2. 点击浏览器右上角的控制按钮，选择设置
+      启动一次CPU环境和GPU环境的服务，并分别点击VSCode进入vscode页面，记住两个环境地址栏的IP和端口号。不同用户的服务端口号不同，同一用户多次启停，服务端口号不变。
+    ![](images/我的notebook/image-19.png)
+    ![](images/我的notebook/image-20.png)
 
-     ![](images/我的notebook/image.png)
+2. 将VSCode服务网页地址设置为“视为安全来源”:
+      1. 在Chrome浏览器地址栏中访问：chrome://flags/#unsafely-treat-insecure-origins-as-secure  
 
-3. 选择隐私与安全 - 安全 - 管理证书
+      3. 在“Insecure origins treated as secure”的右侧的下拉菜单中选择“已启用”或“Enable”。
 
-     ![](images/我的notebook/image-1.png)
+      4. 在下面的文本框中输入你的CPU和GPU环境的VSCode的访问IP和端口号，多个地址用逗号分隔，如：
+            ```
+            http://192.168.99.63:30497,http://192.168.99.63:31840
+            ```
 
-     ![](images/我的notebook/image-2.png)
+      5. 点击页面右下角的“重新启动”或“Relaunch”按钮重启浏览器。
+      ![](images/我的notebook/image-18.png)
 
-4. 从这里开始不同版本的chrome浏览器导入证书方式有差异，这里提供两个不同版本的导入方法，如您的浏览器与此不同，请自行搜索导入方法或从下面链接下载最新浏览器版本。
-
-      -  [139版本](http://storage.ifai:5080/statics-live/chrome_packages/ChromeStandaloneSetup64-139.exe)：
-
-         1. 一次选择本地证书 - 自定义 -由您安装 - 可信证书 - 导入
-
-               ![](images/我的notebook/image-3.png)
-
-               ![](images/我的notebook/image-4.png)
-
-         2. 选择之前下载的证书导入，导入成功后可以看到新的证书显示。
-
-               ![](images/我的notebook/image-5.png)
-
-      - 133版本
-
-         1. 依次选择 本地证书 - 管理从windows导入的证书 - 依次在“中间证书颁发机构”，“受信任的根证书颁发机构”,“受信任的发布者”导入前面下载的证书，导入成功后，可以在颁发者这里看到对应的证书已经导入。
-
-            ![](images/我的notebook/image-6.png)
-
-            ![](images/我的notebook/image-7.png)
-
-
-5. **配置完成后需关闭浏览器重新启动后证书生效**
 
 ## 启动和关闭容器
 
@@ -84,6 +67,12 @@ notebook使用单独的GPU集群，请记得使用完成后及时关闭容器，
 对话式代码生成通过cline插件实现，模型配置暂无法提前配置在镜像，需要再每次启动时手动配置一下：
 
 左边导航栏 - cline插件 - "Use your own API key" - 按照图中的参数配置模型参数 - 点击"Let's go!" - 即出现对话页面
+
+主要配置项：
+
+1. API Provider选择：LM Studio
+2. 选择 “Use custom base URL”，URL填 http://192.168.112.49:8000
+3. Model ID 选择：/ms/AIED/lixiao/download/Qwen3-Coder-480B-A35B-instruct/
 
 ![](images/我的notebook/image-15.png)
 
