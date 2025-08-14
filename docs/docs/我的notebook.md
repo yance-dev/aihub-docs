@@ -27,7 +27,7 @@ vscode server限制所有插件都必须在HTTPS加密的网站环境下运行�
       5. 点击页面右下角的“重新启动”或“Relaunch”按钮重启浏览器。
       ![](images/我的notebook/image-18.png)
 
-3. 如果你的浏览器版本过低，不支持该设置，请下载[最新浏览器版本](http://storage.ifai:5080/statics-live/chrome_packages/ChromeStandaloneSetup64-139.exe)。
+3. 如果你的浏览器版本过低，不支持该设置，请下载安装[最新浏览器版本](http://storage.ifai:5080/statics-live/chrome_packages/ChromeStandaloneSetup64-139.exe)后重试。
 
 ## 启动和关闭容器
 
