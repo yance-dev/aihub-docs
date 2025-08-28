@@ -1,5 +1,5 @@
 site_name: AiHub 使用手册
-site_url: https://lixajh.github.io/aihub-docs
+site_url: https://lixajh.github.io/docs
 theme:
   name: material
   font:
@@ -91,6 +91,7 @@ nav:
       - 工作流管理: 工作流管理.md
       - 模型训练: 模型训练.md
       - 模型部署: 模型部署.md
+      - 我的notebook: 我的notebook.md
       - 模型评测: 
           - 模型评测: 模型评测.md
           - 性能评测: 性能评测.md
