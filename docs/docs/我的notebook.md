@@ -81,3 +81,17 @@ notebook使用单独的GPU集群，请记得使用完成后及时关闭容器，
 
 ![](images/我的notebook/image-17.png)
 
+### 更多技巧
+
+#### 把VSCode安装为PWA应用
+在网页使用vscode的时候，存在vscode快捷键和浏览器快捷键冲突的问题，我们可以把vscode安装为PWA应用，这样就可以避免快捷键冲突的问题，使用也更加方便。
+
+安装方法：
+
+1. 打开vscode网页版本，在地址栏右侧找到安装按钮，点击该按钮
+      ![](images/我的notebook/image-21.png)
+2. 在弹出的窗口中，点击“安装”
+      ![](images/我的notebook/image-22.png)
+3. 回到桌面，可以看到桌面新增了一个vscode的快捷方式图标，双击即可直接打开vscode，使用方式和原生vscode一样，快捷键也都可以使用
+      ![](images/我的notebook/image-23.png)
+      ![](images/我的notebook/image-24.png)
