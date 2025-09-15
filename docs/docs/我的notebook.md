@@ -1,4 +1,4 @@
-我们现已将 Jupyter Notebook 和 VSCode 无缝集成至 Aihub 平台，用户可在平台上快速启动 Notebook 实例或VSCode，进行模型调试、推理测试、可视化分析等任务。
+原我的Notebook功能升级为我的应用，不仅支持 Jupyter Notebook 和 VSCode 无缝集成至 Aihub 平台，同时提供VNC+SSH环境，用户可在平台上快速启动 Notebook 实例，VSCode以及VNC和SSH服务，进行模型调试、推理测试、可视化分析,数据传输等任务。
 
 其中vscode集成了AICoding能力，支持对话式编程和代码补全。
 
@@ -31,7 +31,7 @@ vscode server限制所有插件都必须在HTTPS加密的网站环境下运行�
 
 ## 启动和关闭容器
 
-点击我的notebook菜单进入notebook启动页面，我们支持CPU和GPU两种环境的notebook,并默认挂载华为存储。notebookCPU环境为ubuntu22.04-py311，资源规格为2核10G内存； GPU环境镜像为ubuntu22.04-py311-cuda12-torch2.4.0，资源规格为2核10G内存和1个4090GPU。
+点击我的应用菜单进入notebook启动页面，我们支持CPU和GPU两种环境的notebook,并默认挂载华为存储。notebookCPU环境为ubuntu22.04-py311，资源规格为2核10G内存； GPU环境镜像为ubuntu22.04-py311-cuda12-torch2.4.0，资源规格为2核10G内存和1个4090GPU。
 
 ![](images/我的notebook/image-13.png)
 
@@ -95,3 +95,60 @@ notebook使用单独的GPU集群，请记得使用完成后及时关闭容器，
 3. 回到桌面，可以看到桌面新增了一个vscode的快捷方式图标，双击即可直接打开vscode，使用方式和原生vscode一样，快捷键也都可以使用
       ![](images/我的notebook/image-23.png)
       ![](images/我的notebook/image-24.png)
+
+# VNC+SSH环境
+
+## 启动和关闭容器
+
+点击我的应用菜单，可以看到VNC+SSH环境卡片，该环境为纯CPU环境，资源规格为2核10G内存；预装VNC服务和SSH服务，用户可通过两种协议分别登录容器。点击启动按钮，等状态变为“已启动”时，卡片将显示VNC服务地址和SSH登录命令，同时“Web VNC”按钮变为可点击。点击关闭按钮，可以关闭容器。
+
+![](images/我的notebook/image-25.png)
+
+## VNC服务访问
+
+VNC服务支持Web VNC和VNC协议两种方式访问，内部预置了vscode，pycharm，spyder，chrome，nomacs，VLC播放器等常用软件。
+
+### Web VNC
+
+直接点击Web VNC按钮，即可打开Web VNC服务网页使用。
+
+![](images/我的notebook/image-26.png)
+
+### VNC协议
+
+VNC协议主要用于在办公网络电脑通过堡垒机访问使用。
+
+1. 在办公网络电脑访问并登录公司堡垒机地址：http://192.168.120.100（堡垒机由IT部维护，如需注册账号或有其他疑问，请在飞书IT服务台咨询）。
+
+2. 找到上文启动容器后，页面显示的VNC服务地址的主机，点击Quick Access，填写相关信息后，即可通过网页打开VNC服务
+
+
+
+   ![](images/我的notebook/image-27.png)
+
+   ![](images/我的notebook/image-28.png)
+
+   ![](images/我的notebook/image-29.png)
+
+## SSH服务访问
+
+ssh服务支持用户通过ssh协议登录容器，访问数据，同步代码。
+
+### SSH服务同步vscode代码示例
+
+服务已经预置了VSCode的“Remote”插件的服务端程序，支持通过该插件直接连接编辑和保存服务端代码，由于服务端程序必须与特定的插件和VSCode版本匹配，如需使用该功能，请安装1.103.2版本的VSCode，并安装特定插件后使用。
+
+VSCode下载链接：http://storage.ifai:5080/statics-live/vscode/VSCodeUserSetup-x64-1.103.2.exe
+
+Remote插件下载链接：http://storage.ifai:5080/statics-live/vscode/ms-vscode-remote.remote-ssh-0.120.0.vsix
+
+安装后，即可使用remote插件直接访问服务端代码（使用说明：https://code.visualstudio.com/docs/remote/ssh）。
+
+1. 按F1或ctrl+shift+P打开Remote-SSH: Connect to Host...页面，根据引导输入登录命令，密码后，即可打开remote VSCode。
+
+![](images/我的notebook/image-30.png)
+
+如图，VSCode通过remote和ssh服务打开了ms/PA目录
+
+![](images/我的notebook/image-31.png)
+
